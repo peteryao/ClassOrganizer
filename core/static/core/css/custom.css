@@ -10,10 +10,16 @@
 	margin: 0px;
 }
 
+h1 {
+	margin: 10px 0;
+}
+
 .navbar-custom {
 	position: fixed;
 	right: 0px;
 	left: 0px;
+	height: 50px;
+	background-color: #ccc;
 }
 
 .main-page {
@@ -63,13 +69,13 @@ button {
 #left-button-div span{
 	width: 44px;
 	height: 44px;
-	padding: 0px 0px;
+	padding: 3px 4px;
 }
 
 #right-button-div  span{
 	width: 44px;
 	height: 44px;
-	padding: 0px 0px;
+	padding: 3px 4px;
 }
 
  #right-button-div button, 
@@ -83,6 +89,13 @@ button {
 	width: -moz-calc(100% - 2 * 44px);
     width: -webkit-calc(100% - 2 * 44px);
     width: calc(100% - 2 * 44px);
+    height: 50px;
+}
+
+#title-div h3 {
+	margin: 10px 0;
+	font-size: 22px;
+	
 }
 
 #right-menu-button {
@@ -94,17 +107,14 @@ button {
 	margin: 8px 0;
 }
 
-#title-div h3 {
-	margin: 5px 0;
-	font-size: 18px;
 
-}
 
 .header {
 	float: left;
 	margin: 0;
 	width: 100%;
 	border-bottom: 2px solid #000;
+	height: 50px;
 }
 
 .header h1 {
@@ -124,15 +134,25 @@ button {
 }
 
 #upcoming-deadlines {
-	margin-top: -20px;
+	
 }
 
 .div1 {
 	float: left;
+	margin-left: auto;
+	margin-right: auto;
+	left: 0px;
+	right: 0px;
+	width: 310px;
+
 	/*width: -moz-calc(100% - 48px);
     width: -webkit-calc(100% - 48px);
     width: calc(100% - 48px);*/
 
+}
+
+.div1 h1 {
+	padding-left: 25px;
 }
 
 .div2 button {
@@ -164,18 +184,22 @@ button {
 	line-height: 50px;
 	float: left;
 	display: block;
-	width: 300px;
+	width: 360px;
 	border: 2px solid #000;
-	border-radius: 3px;
-	margin-top: -2px;
+	border-left: none;
+	border-right: none;
+	margin-top: 2px;
 	background-color: #7F93AE;
 	color: #FFF;
+	border-color: #357EBD;
 }
 
 .group a{
 	font-size: 20px;
 	text-decoration: none;
 	color: #FFF;
+	height: 50px;
+	width: 360px;
 }
 
 .main-content, .side-column {
@@ -194,3 +218,4 @@ button {
 	height: 500px;
 	width: 44px;
 }
+
