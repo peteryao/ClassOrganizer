@@ -10,11 +10,21 @@ class Course(TimeStampedModel):
 	last_date = models.DateField(blank=True)
 	owner = models.ForeignKey(User)
 
+	def __unicode__(self):
+		return self.name
+
 class Deadline(TimeStampedModel):
 	name = models.CharField(max_length=256)
 	course = models.ForeignKey(Course)
 	date_due = models.DateField(blank=True)
 	maker = models.ForeignKey(User)
+
+	def __unicode__(self):
+		return self.name
+
+	def __lt__(self, other):
+		return self.date_due < other.date_due
+
 
 class Group(TimeStampedModel):
 	name = models.CharField(max_length=256)

@@ -36,7 +36,16 @@ def test(request):
 	user_courses = [course.course for course in CourseMember.objects.filter(pk=request.user.id)]
 	new_updates = []
 	for course in user_courses:
-		new_updates.append(len(Update.objects.filter(course=course).filter(created__gte=request.user.last_visit)))
+		new_updates.append(len(Update.objects.filter(course=course).filter(created__gte=request.user.last_login)))
+
+	deadlines = []
+	for course in user_courses:
+		for deadline in Deadline.objects.filter(course=course):
+			deadlines.append(deadline)
+
+	deadlines = sorted(deadlines)
+	context['deadlines'] = deadlines
+	print deadlines
 
 	context['user_courses'] = zip(user_courses, new_updates)
 	return render(request, 'core/test.html', context)
