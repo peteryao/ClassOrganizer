@@ -6,30 +6,22 @@
 </head>
 <body>
 <div class="navbar-custom" id="navbar">
-	
-		
-			<div id="left-button-div">
-				<a href="">
-					<span class="glyphicon glyphicon-align-justify"></span>
-			    </a>
-		    </div>
-			<div id="title-div">
-				<h3 class="">Class Organizer</h3>
-			</div>
-			<div id="right-button-div">
-			    <a href="">
-			    	<span class="glyphicon glyphicon-align-justify"></span>
-			    </a>
-		    </div>
-		
-	
+	<div id="left-button-div">
+		<a href=""><span class="glyphicon glyphicon-align-justify"></span></a>
+	  </div>
+	<div id="title-div">
+		<h3 class="">Class Organizer</h3>
+	</div>
+	<div id="right-button-div">
+	  <a href="">
+	  	<span class="glyphicon glyphicon-align-justify"></span>
+	  </a>
+	</div>
 </div>
-
-<div class="main-page" >
-<!-- 
-Content goes here
--->
-{%block content%}{%endblock%}
+<div class="container">
+	<div class="row" style="margin-top:30px"><center><h4>{%block page_title%}{% endblock %}</h4></center></div>
+	{%block content%}{%endblock%}
+	</div>
 </div>
 
 </body>

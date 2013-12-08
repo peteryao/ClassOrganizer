@@ -2,29 +2,14 @@
 
 {% load humanize %}
 
-{%block content%}
-<div class="page" id="left">
-	<div id="upcoming-deadlines">
-		<div class="header">
-			<div class="div3">
-				<h1>Upcoming Deadlines</h1>
-			</div>
-		</div>
-		<!-- sample -->
-		{% for day, group in deadlines.items %}
-		<div class="deadline">
-			<h2>{{day|naturalday}}</h2>
-			<ul>
-			{% for note in group.0 %}
-				<li><h4>{{note.course}}</h4> {{note}} </li>
-			{% endfor %}
-			</ul>
-		<li><h4>{{note.course}}</h4> {{note}} </li> 
-		</div>
-		{% endfor %}
-	</div>
+{% block page_title %}
+Groups
+<div class="col-md-2 pull-right" style="margin-right:10px">
+	<button type="button" class="btn btn-primary">+</button>
 </div>
+{% endblock %}
 
+<<<<<<< HEAD
 <div class="page" id="middle">
 	<div class="main-content" id="groups">
 		<div class="header">
@@ -71,17 +56,17 @@
 		-->
 	</div>
 	
+=======
+{%block content%}
+<div class="row" style="margin-top:10px">
+>>>>>>> 59ebeff7dabcbd6d2d402f2a6669b49acfb17246
 </div>
-
-
-
-<div class="page" id="right">
-	
-	<div class="main-content" id="calendar">
-		<div class="header">
-			<h1>Calendar</h1>
-		</div>
-		add calendar later
+{% for course, update in user_courses %}
+<div class="row col-md-10 group" style="margin-left:10px">
+	<div class="notifications">
+		<a href="#">{{update}}</a>
 	</div>
+	<a href-"#">{{course}}</a>
 </div>
+{% endfor %}
 {%endblock%}
