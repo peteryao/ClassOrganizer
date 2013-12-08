@@ -54,7 +54,9 @@
 		<div class="header">
 			<h1>Messages</h1>
 		</div>
-		add calendar later
+		{% for update in user_updates %}
+		<div>{{update.user}} - {{update.text}}</div>
+		{% endfor %}
 	</div>
 </div>
 {%endblock%}

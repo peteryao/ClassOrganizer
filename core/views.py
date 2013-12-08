@@ -29,6 +29,18 @@ def index(request):
 	print grouped_deadlines
 	context['deadlines'] = grouped_deadlines
 
+	user_updates = []
+
+	for course in user_courses:
+		for update in Update.objects.filter(course=course):
+			user_updates.append(update)
+
+	for group in GroupMember.objects.filter(user=request.user):
+		for update in Update.objects.filter(group=group):
+			user_updates.append(update)
+
+	context['user_updates'] = user_updates
+
 	context['user_courses'] = zip(user_courses, new_updates)
 	return render(request, 'core/index.html', context)
 
