@@ -19,6 +19,7 @@
 				<li><h4>{{note.course}}</h4> {{note}} </li>
 			{% endfor %}
 			</ul>
+		<li><h4>{{note.course}}</h4> {{note}} </li> 
 		</div>
 		{% endfor %}
 	</div>
@@ -37,9 +38,9 @@
 		{% for course, update in user_courses %}
 		<div class="group">
 			<div class="notifications">
-				<a href="#"><span></span>{{update}}</a>
+				<a href="#"><span>{{update}}</span></a>
 			</div>
-			<a href="#"><span></span>{{course}}</a>
+			<a href="#"><span>{{course}}</span></a>
 		</div>
 		{% endfor %}
 	</div>
@@ -53,9 +54,7 @@
 		<div class="header">
 			<h1>Messages</h1>
 		</div>
-		{% for update in user_updates %}
-		<div>{{update.user}} - {{update.text}}</div>
-		{% endfor %}
+		add calendar later
 	</div>
 </div>
 {%endblock%}

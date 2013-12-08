@@ -205,11 +205,17 @@ button {
 	
 }
 
-.group a span {
+.group > a span {
 	height: 50px;
 	width: 360px;
+	display: block;
 }
 
+.notifications a span {
+	height: 34px;
+	width: 34px;
+	display: block;
+}
 .main-content, .side-column {
 	float: left;
 	display: block;
