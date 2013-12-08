@@ -1,9 +1,41 @@
+.main-page {
+	width: 990px;
+}
+
 .container {
 	padding: 0px;
 }
 
 .navbar {
 	margin: 0px;
+}
+
+#navbar {
+	position: fixed;
+	right: 0px;
+	left: 0px;
+}
+
+.main-page {
+	padding-top: 51px;
+}
+
+.page {
+	width: 350;
+	float: left;
+}
+
+#middle {
+	width: 360px;
+}
+
+#left, #right {
+	width: 315px;
+}
+
+button {
+	/*background-color:#428bca;
+	border-color:#357ebd;*/
 }
 
 .container > .navbar-header {
@@ -13,18 +45,38 @@
 .navbar-header div{
 	float: left;
 	display: block;
+	font-size: 36px;
 }
 
 #left-button-div {
 	float: left;
 	width: 44px;
+	height: 50px;
 }
 
 #right-button-div {
 	float: left;
 	width: 44px;
+	height: 50px;
 }
 
+#left-button-div span{
+	width: 44px;
+	height: 50px;
+	padding: 4px 3px;
+}
+
+#right-button-div  span{
+	width: 44px;
+	height: 50px;
+	padding: 4px 3px;
+}
+
+ #right-button-div button, 
+ #left-button-div button {
+ 	/*background-color: #5BC0DE;
+ 	border-color: #46B8DA;*/
+ }
 #title-div  {
 	text-align: center;
 	float: left;
@@ -64,14 +116,32 @@
 	margin: 10px 0;
 }
 
-.div1 {
-	float: left;
-	width: 70%;
+.header {
+	text-align: center;
+	
 }
 
-.div {
+#upcoming-deadlines {
+	margin-top: -20px;
+}
+
+.div1 {
 	float: left;
-	width: 30%;
+	/*width: -moz-calc(100% - 48px);
+    width: -webkit-calc(100% - 48px);
+    width: calc(100% - 48px);*/
+
+}
+
+.div2 button {
+	padding: 8px 14px;
+	margin: 5px;
+}
+
+.div3 {
+	float: left;
+	
+	
 }
 
 .notifications {
@@ -92,7 +162,7 @@
 	line-height: 50px;
 	float: left;
 	display: block;
-	width: 100%;
+	width: 300px%;
 	border: 2px solid #000;
 	border-radius: 3px;
 	margin-top: -2px;
@@ -112,9 +182,9 @@
 }
 
 .main-content {
-	width: -moz-calc(100% - 44px);
+	/*width: -moz-calc(100% - 44px);
     width: -webkit-calc(100% - 44px);
-    width: calc(100% - 44px);
+    width: calc(100% - 44px);*/
 }
 
 .side-column {

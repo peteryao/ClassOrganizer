@@ -1,11 +1,55 @@
 {%extends "core/base.html"%}
 
 {%block content%}
-<div class="container" id="left">
+<div class="page" id="left">
+	<div id="upcoming-deadlines">
+		<div class="header">
+			<div class="div3">
+				<h1>Upcoming Deadlines</h1>
+			</div>
+			<!--<div class="div4">
+				<button type="button" class="btn btn-primary">
+					Open Calendar
+				</button>
+			</div>-->
+		</div>
+		
+		<!-- sample -->
+		<div class="deadline">
+			<h2>Today</h2>
+			<ul>
+				<li><h4>ECS 030</h4> Project 2 due</li>
+				<li><h4>ENG 010</h4> Midterm 1</li><!-- maybe add times?-->
+				<li><h4>PHY 009A</h4> Homework 3 due</li>
+			</ul>
+		</div>
+		<div class="deadline">
+			<h2>Tomorrow</h2>
+			<ul>
+				<li><h4>ECS 30</h4> Midterm</li>
+			</ul>
+		</div>
+		<!-- template
+		<div class="deadline">
+			<h2>{date}</h2>
+			<ul>
+				for deadline in date
+				<li><h4>{class naem}</h4> {assignment}</li>
+			</ul>
+		</div>
+		-->
+	</div>
+</div>
+
+<div class="page" id="middle">
 	<div class="main-content" id="groups">
 		<div class="header">
-			<div class="div1"><h1>Groups</h1></div>
-			<div class="div2"><button type="button">+</button></div>
+			<div class="div1">
+				<h1>Groups</h1>
+			</div>
+			<div class="div2">
+				<button type="button" class="btn btn-primary">+</button>
+			</div>
 		</div>
 		
 		<div class="group">
@@ -35,60 +79,13 @@
 		</div>
 		-->
 	</div>
-	<div class="side-column" id="left-bar">
-		<button type="button" class="navbar-toggle" data-toggle="" data-target="">
-	      <span class="sr-only">Toggle navigation</span>
-	      <span class="icon-bar"></span>
-	      <span class="icon-bar"></span>
-	      <span class="icon-bar"></span>
-	    </button>
-	</div>
+	
 </div>
 
-<div class="container" id="middle">
-	<div id="upcoming-deadlines">
-		<div class="header">
-			<h1>Upcoming Deadlines</h1>
-		</div>
-		<button type="button">
-			Open Calendar
-		</button>
-		<!-- sample -->
-		<div class="deadline">
-			<h2>Today</h2>
-			<ul>
-				<li><h4>ECS 030</h4> Project 2 due</li>
-				<li><h4>ENG 010</h4> Midterm 1</li><!-- maybe add times?-->
-				<li><h4>PHY 009A</h4> Homework 3 due</li>
-			</ul>
-		</div>
-		<div class="deadline">
-			<h2>Tomorrow</h2>
-			<ul>
-				<li><h4>ECS 30</h4> Midterm</li>
-			</ul>
-		</div>
-		<!-- template
-		<div class="deadline">
-			<h2>{date}</h2>
-			<ul>
-				for deadline in date
-				<li><h4>{class naem}</h4> {assignment}</li>
-			</ul>
-		</div>
-		-->
-	</div>
-</div>
 
-<div class="container" id="right">
-	<div class="side-column" id="right-bar">
-		<button type="button" class="navbar-toggle" data-toggle="" data-target="">
-	      <span class="sr-only">Toggle navigation</span>
-	      <span class="icon-bar"></span>
-	      <span class="icon-bar"></span>
-	      <span class="icon-bar"></span>
-	    </button>
-	</div>
+
+<div class="page" id="right">
+	
 	<div class="main-content" id="calendar">
 		<div class="header">
 			<h1>Calendar</h1>
