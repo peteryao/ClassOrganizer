@@ -6,9 +6,9 @@
 <div class="page" id="left">
 	<div id="upcoming-deadlines">
 		<div class="header">
-			<div class="div3">
+			
 				<h1>Upcoming Deadlines</h1>
-			</div>
+			
 		</div>
 		<!-- sample -->
 		{% for day, group in deadlines.items %}
@@ -19,7 +19,7 @@
 				<li><h4>{{note.course}}</h4> {{note}} </li>
 			{% endfor %}
 			</ul>
-		<li><h4>{{note.course}}</h4> {{note}} </li> 
+		
 		</div>
 		{% endfor %}
 	</div>
@@ -36,7 +36,7 @@
 			</div>
 		</div>
 		{% for course, update in user_courses %}
-		<div class="group">
+		<div class="group blues">
 			<div class="notifications">
 				<a href="#"><span>{{update}}</span></a>
 			</div>
