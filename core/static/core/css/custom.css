@@ -10,7 +10,7 @@
 	margin: 0px;
 }
 
-#navbar {
+.navbar-custom {
 	position: fixed;
 	right: 0px;
 	left: 0px;
@@ -38,11 +38,11 @@ button {
 	border-color:#357ebd;*/
 }
 
-.container > .navbar-header {
+.container > .navbar-custom {
 	margin: 0px;
 }
 
-.navbar-header div{
+.navbar-custom div{
 	float: left;
 	display: block;
 	font-size: 36px;
@@ -62,14 +62,14 @@ button {
 
 #left-button-div span{
 	width: 44px;
-	height: 50px;
-	padding: 4px 3px;
+	height: 44px;
+	padding: 0px 0px;
 }
 
 #right-button-div  span{
 	width: 44px;
-	height: 50px;
-	padding: 4px 3px;
+	height: 44px;
+	padding: 0px 0px;
 }
 
  #right-button-div button, 
@@ -95,7 +95,9 @@ button {
 }
 
 #title-div h3 {
-	margin: 10px 0;
+	margin: 5px 0;
+	font-size: 18px;
+
 }
 
 .header {
