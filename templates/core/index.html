@@ -15,7 +15,7 @@
 		<div class="deadline">
 			<h2>{{day|naturalday}}</h2>
 			<ul>
-			{% for note in group %}
+			{% for note in group.0 %}
 				<li><h4>{{note.course}}</h4> {{note}} </li>
 			{% endfor %}
 			</ul>
@@ -38,11 +38,37 @@
 		{% for course, update in user_courses %}
 		<div class="group">
 			<div class="notifications">
-				<a href="#">{{update}}</a>
+				<a href="#"><span></span>{{update}}</a>
 			</div>
-			<a href-"#">{{course}}</a>
+			<a href="#"><span></span>{{course}}</a>
 		</div>
 		{% endfor %}
+		<div class="group">
+			<div class="notifications">
+				<a href="#">1</a>
+			</div>
+			<a href="#">ECS 030</a>
+		</div>
+		<div class="group">
+			<div class="notifications">
+				<a href="#">4</a>
+			</div>
+			<a href="#">ENG 010</a>
+		</div>
+		<div class="group">
+			<div class="notifications">
+				<a href="#">0</a>
+			</div>
+			<a href="#">PHY 009A</a>
+		</div>
+		<!-- template
+		<div class="group">
+			<div class="notifications">
+				<a href="#">{number of new notifications}</a>
+			</div>
+			<a href="#">{class name}</a>
+		</div>
+		-->
 	</div>
 	
 </div>
