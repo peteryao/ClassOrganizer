@@ -15,7 +15,7 @@
 		<div class="deadline">
 			<h2>{{day|naturalday}}</h2>
 			<ul>
-			{% for note in group.0 %}
+			{% for note in group %}
 				<li><h4>{{note.course}}</h4> {{note}} </li>
 			{% endfor %}
 			</ul>
