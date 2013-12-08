@@ -3,6 +3,6 @@ from django.contrib.auth.models import User, Permission
 from django.contrib.auth.decorators import login_required, permission_required
 
 def index(request):
-	context = {}
+	context = {'User' : User}
 	
 	return render(request, 'core/index.html', context)
