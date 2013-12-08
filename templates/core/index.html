@@ -54,7 +54,11 @@
 		<div class="header">
 			<h1>Messages</h1>
 		</div>
-		add calendar later
+		{% for update in user_updates %}
+		<div class="group">
+			<a href="#"><span>{{update}}</span></a>
+		</div>
+		{% endfor %}
 	</div>
 </div>
 {%endblock%}
