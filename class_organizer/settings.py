@@ -60,8 +60,12 @@ WSGI_APPLICATION = 'class_organizer.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': project('db/data.sqlite'),
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'course_org',
+        'USER': 'course_org',
+        'PASSWORD': 'asdf12345!~',
+        'HOST': 'localhost',
+        'PORT': '', 
     }
 }
 

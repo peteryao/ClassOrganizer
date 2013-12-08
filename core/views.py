@@ -28,3 +28,15 @@ def course_page(request, course_id):
 	course = Course.objects.get(pk=course_id)
 	deadlines = Deadline.objects.filter(course=course_id).filter(date_due__gte=datetime.today())
 
+	return render(request, 'core/index.html', context)
+
+def test(request):
+	context = {'User' : request.user}
+
+	user_courses = [course.course for course in CourseMember.objects.filter(user=request.user)]
+	new_updates = []
+	for course in user_courses:
+		new_updates.append(len(Update.objects.filter(course=course).filter(created__gte=request.user.last_visit)))
+
+	context['user_courses', zip(user_courses, new_updates)]
+	return render(request, 'core/test.html', context)
