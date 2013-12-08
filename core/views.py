@@ -20,7 +20,14 @@ def index(request):
 			deadlines.append(deadline)
 
 	deadlines = sorted(deadlines)
-	context['deadlines'] = deadlines
+	grouped_deadlines = {}
+	for deadline in deadlines:
+		if deadline.date_due in grouped_deadlines:
+			grouped_deadlines[deadline.date_due].append(deadline)
+		else:
+			grouped_deadlines[deadline.date_due] = deadline 
+	print grouped_deadlines
+	context['deadlines'] = grouped_deadlines
 
 	context['user_courses'] = zip(user_courses, new_updates)
 	return render(request, 'core/index.html', context)

@@ -1,5 +1,7 @@
 {%extends "core/base.html"%}
 
+{% load humanize %}
+
 {%block content%}
 <div class="page" id="left">
 	<div id="upcoming-deadlines">
@@ -7,40 +9,19 @@
 			<div class="div3">
 				<h1>Upcoming Deadlines</h1>
 			</div>
-			<!--<div class="div4">
-				<button type="button" class="btn btn-primary">
-					Open Calendar
-				</button>
-			</div>-->
 		</div>
-		
 		<!-- sample -->
+		{% for day, group in deadlines.items %}
 		<div class="deadline">
-			<h2>Today</h2>
+			<h2>{{day|naturalday}}</h2>
 			<ul>
-				{% for deadline in deadlines %}
-				<li><h4>{{deadline.course}}</h4> {{deadline}} </li> 
-				{% endfor %}
-				<li><h4>ECS 030</h4> Project 2 due</li>
-				<li><h4>ENG 010</h4> Midterm 1</li><!-- maybe add times?-->
-				<li><h4>PHY 009A</h4> Homework 3 due</li>
+			{% for note in group.0 %}
+				<li><h4>{{note.course}}</h4> {{note}} </li>
+			{% endfor %}
 			</ul>
+		<li><h4>{{note.course}}</h4> {{note}} </li> 
 		</div>
-		<div class="deadline">
-			<h2>Tomorrow</h2>
-			<ul>
-				<li><h4>ECS 30</h4> Midterm</li>
-			</ul>
-		</div>
-		<!-- template
-		<div class="deadline">
-			<h2>{date}</h2>
-			<ul>
-				for deadline in date
-				<li><h4>{class naem}</h4> {assignment}</li>
-			</ul>
-		</div>
-		-->
+		{% endfor %}
 	</div>
 </div>
 
