@@ -9,7 +9,7 @@ from course.models import Course, Deadline, Group, Update, GroupMember, CourseMe
 def index(request):
 	context = {'User' : request.user}
 
-	user_courses = [course.course for course in CourseMember.objects.filter(pk=request.user.id)]
+	user_courses = [course.course for course in CourseMember.objects.filter(user=request.user.id)]
 	new_updates = []
 	for course in user_courses:
 		new_updates.append(len(Update.objects.filter(course=course).filter(created__gte=request.user.last_login)))
