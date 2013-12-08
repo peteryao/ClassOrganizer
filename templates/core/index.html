@@ -15,10 +15,11 @@
 		<div class="deadline">
 			<h2>{{day|naturalday}}</h2>
 			<ul>
-			{% for note in group %}
+			{% for note in group.0 %}
 				<li><h4>{{note.course}}</h4> {{note}} </li>
 			{% endfor %}
 			</ul>
+		<li><h4>{{note.course}}</h4> {{note}} </li> 
 		</div>
 		{% endfor %}
 	</div>
@@ -78,7 +79,7 @@
 	
 	<div class="main-content" id="calendar">
 		<div class="header">
-			<h1>Messages</h1>
+			<h1>Calendar</h1>
 		</div>
 		add calendar later
 	</div>
