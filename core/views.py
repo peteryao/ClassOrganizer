@@ -9,12 +9,27 @@ from course.models import Course, Deadline, Group, Update, GroupMember, CourseMe
 def index(request):
 	context = {'User' : request.user}
 
-	user_courses = [course.course for course in CourseMember.objects.filter(user=request.user.id)]
+	user_courses = [course.course for course in CourseMember.objects.filter(pk=request.user.id)]
 	new_updates = []
 	for course in user_courses:
 		new_updates.append(len(Update.objects.filter(course=course).filter(created__gte=request.user.last_login)))
-	context['user_courses'] = zip(user_courses, new_updates)
 
+	deadlines = []
+	for course in user_courses:
+		for deadline in Deadline.objects.filter(course=course):
+			deadlines.append(deadline)
+
+	deadlines = sorted(deadlines)
+	grouped_deadlines = dict()
+	for deadline in deadlines:
+		if deadline.date_due in grouped_deadlines:
+			grouped_deadlines[deadline.date_due].append(deadline)
+		else:
+			grouped_deadlines[deadline.date_due] = [deadline]
+	print grouped_deadlines
+	context['deadlines'] = grouped_deadlines
+
+	context['user_courses'] = zip(user_courses, new_updates)
 	return render(request, 'core/index.html', context)
 
 def user_course_list(request):

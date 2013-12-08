@@ -2,22 +2,85 @@
 
 {% load humanize %}
 
-{% block page_title %}
-Groups
-<div class="col-md-2 pull-right" style="margin-right:10px">
-	<button type="button" class="btn btn-primary">+</button>
-</div>
-{% endblock %}
-
 {%block content%}
-<div class="row" style="margin-top:10px">
-</div>
-{% for course, update in user_courses %}
-<div class="row col-md-10 group" style="margin-left:10px">
-	<div class="notifications">
-		<a href="#">{{update}}</a>
+<div class="page" id="left">
+	<div id="upcoming-deadlines">
+		<div class="header">
+			<div class="div3">
+				<h1>Upcoming Deadlines</h1>
+			</div>
+		</div>
+		<!-- sample -->
+		{% for day, group in deadlines.items %}
+		<div class="deadline">
+			<h2>{{day|naturalday}}</h2>
+			<ul>
+			{% for note in group %}
+				<li><h4>{{note.course}}</h4> {{note}} </li>
+			{% endfor %}
+			</ul>
+		</div>
+		{% endfor %}
 	</div>
-	<a href-"#">{{course}}</a>
 </div>
-{% endfor %}
+
+<div class="page" id="middle">
+	<div class="main-content" id="groups">
+		<div class="header">
+			<div class="div1">
+				<h1>Groups</h1>
+			</div>
+			<div class="div2">
+				<button type="button" class="btn btn-primary">+</button>
+			</div>
+		</div>
+		{% for course, update in user_courses %}
+		<div class="group">
+			<div class="notifications">
+				<a href="#">{{update}}</a>
+			</div>
+			<a href-"#">{{course}}</a>
+		</div>
+		{% endfor %}
+		<div class="group">
+			<div class="notifications">
+				<a href="#">1</a>
+			</div>
+			<a href="#">ECS 030</a>
+		</div>
+		<div class="group">
+			<div class="notifications">
+				<a href="#">4</a>
+			</div>
+			<a href="#">ENG 010</a>
+		</div>
+		<div class="group">
+			<div class="notifications">
+				<a href="#">0</a>
+			</div>
+			<a href="#">PHY 009A</a>
+		</div>
+		<!-- template
+		<div class="group">
+			<div class="notifications">
+				<a href="#">{number of new notifications}</a>
+			</div>
+			<a href="#">{class name}</a>
+		</div>
+		-->
+	</div>
+	
+</div>
+
+
+
+<div class="page" id="right">
+	
+	<div class="main-content" id="calendar">
+		<div class="header">
+			<h1>Messages</h1>
+		</div>
+		add calendar later
+	</div>
+</div>
 {%endblock%}
